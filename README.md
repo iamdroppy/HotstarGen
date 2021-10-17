@@ -1,6 +1,9 @@
 # HotstarGen
 RDR3: A simple yet useful nativedb to code conversor with Liquid support
 
+## Natives
+You can find updated natives at https://github.com/alloc8or/rdr3-nativedb-data
+
 ## Samples
 
 This is CLI, you can use `--help` anytime to get argument help.
