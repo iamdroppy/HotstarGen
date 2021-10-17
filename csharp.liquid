@@ -1,0 +1,32 @@
+using System;
+
+namespace Hotstar
+{
+    public enum NATIVE_{{ category }} : ulong
+    { {% for native in natives %}
+        {% if native.comment != "" %}
+        /// <summary>
+        /// {{ native.comment | replace: "\n", "\n        /// " }}
+        ///
+        {% for params in native.params %}
+        /// > {{ params.type }} {{ params.name }}
+        {%endfor%}
+        ///
+        /// </summary>
+        {% endif %}
+        {{ native.name }} = {{ native.hash }},
+    {% endfor %}
+    }
+
+    public static class NATIVE_{{ category }}_EXTENSIONS
+    {
+        public static void Call(this NATIVE_{{ category }} hash, params RDR2.Native.InputArgument[] arguments)
+        {
+            RDR2.Native.Function.Call((ulong) hash, arguments);
+        }
+        public static T Call<T>(this NATIVE_{{ category }} hash, params RDR2.Native.InputArgument[] arguments)
+        {
+            return RDR2.Native.Function.Call<T>((ulong) hash, arguments);
+        }
+    }
+}
