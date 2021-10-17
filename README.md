@@ -1,6 +1,9 @@
 # HotstarGen
 RDR3: A simple yet useful nativedb to code conversor with Liquid support
 
+## Binaries
+.NET 5 portable binaries are uploaded in the Release Folder.
+
 ## Natives
 You can find updated natives at https://github.com/alloc8or/rdr3-nativedb-data
 
