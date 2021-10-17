@@ -9,7 +9,9 @@ This is CLI, you can use `--help` anytime to get argument help.
 
 Command:
 
-´-i csharp.liquid -e .cs -o output -y -v´
+`-i csharp.liquid -e .cs -o output -y -v`
+
+*input template csharp.liquid, export with extension .cs, on folder output, without ask any prompt, in verbose mode.*
 
 It will lookup for the native.json on the folder, but you can use `-n native_custom.json` or `--natives native_custom.json`
 
