@@ -9,6 +9,7 @@ namespace HotstarGen
     {
         public static int Main(string[] args)
         {
+            args = "-i input/csharp.liquid -e .cs -o output2 -y -v".Split(' ');
             Parser.Default.ParseArguments<GenerationConfig>(args)
                 .WithParsed<GenerationConfig>(o =>
                 {

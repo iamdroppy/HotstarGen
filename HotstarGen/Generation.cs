@@ -43,8 +43,13 @@ namespace HotstarGen
                 if (!_config.NoPrompt && !YesNo())
                     throw new SafeException($"Output directory {output.FullName} exists but can't be used at the moment.");
 
-                output.Delete(true);
-                output.Create();
+                try
+                {
+                    output.Delete(true);
+                    output.Create();
+                }
+                catch(Exception ex){}
+
                 output = new(_config.Output);
             }
 
